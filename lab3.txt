@@ -1,0 +1,21 @@
+SQL> ALTER TABLE students RENAME TO old_student;
+
+Table altered.
+
+SQL> ALTER TABLE employee RENAME TO old_employee;
+
+Table altered.
+
+SQL> CREATE TABLE department(did number(2) CONSTRAINT department_did_pk PRIMARY KEY, deptname varchar(20) CONSTRAINT department_deptname_nn NOT NULL, strength number(3) DEFAULT 1, avgsalary number(6) CONSTRAINT department_avgsalary_chk CHECK(avgsalary>=10000), category char(1) CONSTRAINT department_category_chk CHECK(category in('X','Y','Z')));
+
+Table created.
+
+SQL> CREATE TABLE manager(managerid number(4) CONSTRAINT manager_managerid_pk PRIMARY KEY, managername varchar(30) CONSTRAINT manager_managername_nn NOT NULL, highest_qual varchar(20), institution varchar(20), deptid number(2) CONSTRAINT manager_deptid_fk REFERENCES department(did));
+
+Table created.
+
+SQL> CREATE TABLE employee(empno number(4) CONSTRAINT employee_empno_pk PRIMARY KEY, empname varchar(10) CONSTRAINT employee_empname_nn NOT NULL, job varchar(15), managerid number(4) CONSTRAINT employee_managerid_fk REFERENCES manager(managerid), deptno number(2) DEFAULT 00);
+
+Table created.
+
+SQL> spool off;

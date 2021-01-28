@@ -1,0 +1,159 @@
+SQL> CREATE TABLE employee (EMPNO number(4), ENAME varchar(10), JOB varchar(20), MGR number(4), HIREDATE date, SAL int, COMM int, DEPTNO number(2));
+
+Table created.
+
+SQL> desc employee
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPNO                                              NUMBER(4)
+ ENAME                                              VARCHAR2(10)
+ JOB                                                VARCHAR2(20)
+ MGR                                                NUMBER(4)
+ HIREDATE                                           DATE
+ SAL                                                NUMBER(38)
+ COMM                                               NUMBER(38)
+ DEPTNO                                             NUMBER(2)
+
+SQL> INSERT INTO employee (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
+  2  VALUES (7369, 'SMITH', 'CLERK', 7902, TO_DATE('17-DEC-80'), 800, NULL, 20);
+
+1 row created.
+
+SQL> INSERT INTO employee (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
+  2  VALUES(7499, 'ALLEN', 'SALESMAN', 7698, TO_DATE('20-FEB-81'), 1600, 300, 30);
+
+1 row created.
+
+SQL> INSERT INTO employee (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
+  2  VALUES(7521, 'WARD', 'SALESMAN', 7698, TO_DATE('22-FEB-81'), 1250, 500, 30);
+
+1 row created.
+
+SQL> INSERT INTO employee (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
+  2  VALUES(7566, 'JONES', 'MANAGER', 7839, TO_DATE('02-APR-81'), 2975, NULL, 20);
+
+1 row created.
+
+SQL> INSERT INTO employee (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
+  2  VALUES(7654, 'MARTIN', 'SALESMAN', 7698, TO_DATE('28-SEP-81'), 1250, 1400, 30);
+
+1 row created.
+
+SQL> INSERT INTO employee (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
+  2  VALUES(7698, 'BLAKE', 'MANAGER', 7839, TO_DATE('01-MAY-81'), 2850, NULL, 30);
+
+1 row created.
+
+SQL> INSERT INTO employee (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
+  2  VALUES(7782, 'CLARK', 'MANAGER', 7839, TO_DATE('09-JUN-81'), 2450, NULL, 10);
+
+1 row created.
+
+SQL> INSERT INTO employee (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
+  2  VALUES(7788, 'SCOTT', 'ANALYST', 7566, TO_DATE('09-NOV-81'), 3000, NULL, 20);
+
+1 row created.
+
+SQL> INSERT INTO employee (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
+  2  VALUES(7839, 'KING', 'PRESIDENT', NULL, TO_DATE('17-NOV-81'), 5000, NULL, 10);
+
+1 row created.
+
+SQL> INSERT INTO employee (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
+  2  VALUES(7844, 'TURNER', 'SALESMAN', 7698, TO_DATE('08-SEP-81'), 1500, 0, 30);
+
+1 row created.
+
+SQL> INSERT INTO employee (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
+  2  VALUES(7876, 'ADAMS', 'CLERK', 7788, TO_DATE('23-SEP-81'), 1100, NULL, 20);
+
+1 row created.
+
+SQL> INSERT INTO employee (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
+  2  VALUES(7900, 'JAMES', 'CLERK', 7698, TO_DATE('03-DEC-81'), 950, NULL, 30);
+
+1 row created.
+
+SQL> INSERT INTO employee (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
+  2  VALUES(7902, 'FORD', 'ANALYST', 7566, TO_DATE('03-DEC-81'), 3000, NULL, 20);
+
+1 row created.
+
+SQL> INSERT INTO employee (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
+  2  VALUES(7934, 'MILLER', 'CLERK', 7782, TO_DATE('23-JAN-82'), 1300, NULL, 10);
+
+1 row created.
+
+SQL> SELECT * FROM employee
+  2  ;
+
+     EMPNO ENAME      JOB                         MGR HIREDATE         SAL      
+---------- ---------- -------------------- ---------- --------- ----------      
+      COMM     DEPTNO                                                           
+---------- ----------                                                           
+      7369 SMITH      CLERK                      7902 17-DEC-80        800      
+                   20                                                           
+                                                                                
+      7499 ALLEN      SALESMAN                   7698 20-FEB-81       1600      
+       300         30                                                           
+                                                                                
+      7521 WARD       SALESMAN                   7698 22-FEB-81       1250      
+       500         30                                                           
+                                                                                
+
+     EMPNO ENAME      JOB                         MGR HIREDATE         SAL      
+---------- ---------- -------------------- ---------- --------- ----------      
+      COMM     DEPTNO                                                           
+---------- ----------                                                           
+      7566 JONES      MANAGER                    7839 02-APR-81       2975      
+                   20                                                           
+                                                                                
+      7654 MARTIN     SALESMAN                   7698 28-SEP-81       1250      
+      1400         30                                                           
+                                                                                
+      7698 BLAKE      MANAGER                    7839 01-MAY-81       2850      
+                   30                                                           
+                                                                                
+
+     EMPNO ENAME      JOB                         MGR HIREDATE         SAL      
+---------- ---------- -------------------- ---------- --------- ----------      
+      COMM     DEPTNO                                                           
+---------- ----------                                                           
+      7782 CLARK      MANAGER                    7839 09-JUN-81       2450      
+                   10                                                           
+                                                                                
+      7788 SCOTT      ANALYST                    7566 09-NOV-81       3000      
+                   20                                                           
+                                                                                
+      7839 KING       PRESIDENT                       17-NOV-81       5000      
+                   10                                                           
+                                                                                
+
+     EMPNO ENAME      JOB                         MGR HIREDATE         SAL      
+---------- ---------- -------------------- ---------- --------- ----------      
+      COMM     DEPTNO                                                           
+---------- ----------                                                           
+      7844 TURNER     SALESMAN                   7698 08-SEP-81       1500      
+         0         30                                                           
+                                                                                
+      7876 ADAMS      CLERK                      7788 23-SEP-81       1100      
+                   20                                                           
+                                                                                
+      7900 JAMES      CLERK                      7698 03-DEC-81        950      
+                   30                                                           
+                                                                                
+
+     EMPNO ENAME      JOB                         MGR HIREDATE         SAL      
+---------- ---------- -------------------- ---------- --------- ----------      
+      COMM     DEPTNO                                                           
+---------- ----------                                                           
+      7902 FORD       ANALYST                    7566 03-DEC-81       3000      
+                   20                                                           
+                                                                                
+      7934 MILLER     CLERK                      7782 23-JAN-82       1300      
+                   10                                                           
+                                                                                
+
+14 rows selected.
+
+SQL> spool off;

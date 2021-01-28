@@ -1,0 +1,118 @@
+SQL> CREATE TABLE students (Roll NUMBER(7), Name VARCHAR2(30), City VARCHAR2(50), Age NUMBER(2), CGPA NUMBER(4,2));
+
+Table created.
+
+SQL> desc students;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ROLL                                               NUMBER(7)
+ NAME                                               VARCHAR2(30)
+ CITY                                               VARCHAR2(50)
+ AGE                                                NUMBER(2)
+ CGPA                                               NUMBER(4,2)
+
+SQL> INSERT INTO students (Roll, Name, City, Age, CGPA)
+  2  VALUES (1905101, 'Ram', 'Bhubaneswar', 19, 9.0);
+
+1 row created.
+
+SQL> INSERT INTO students (Roll, Name, City, Age, CGPA)
+  2  VALUES (1905102, 'Hari', 'Bhubaneswar', NULL, 6.7);
+
+1 row created.
+
+SQL> INSERT INTO students (Roll, Name, City, Age, CGPA)
+  2  VALUES (1905103, 'Uday', 'Jharkhand', 20, 8.97);
+
+1 row created.
+
+SQL> INSERT INTO students (Roll, Name, City, Age, CGPA)
+  2  VALUES (1905104, 'Vikas', 'Uttar Pradesh', 19, 8.5);
+
+1 row created.
+
+SQL> INSERT INTO students (Roll, Name, City, Age, CGPA)
+  2  VALUES (1905105, 'Sweta', 'Ranchi', 19, 9.2);
+
+1 row created.
+
+SQL> INSERT INTO students (Roll, Name, City, Age, CGPA)
+  2  VALUES (1905106, 'Yogesh', 'Rajastan', 18, 7.9);
+
+1 row created.
+
+SQL> INSERT INTO students (Roll, Name, City, Age, CGPA)
+  2  VALUES (1905210, 'Smriti', 'Delhi', 20, 8.99);
+
+1 row created.
+
+SQL> INSERT INTO students (Roll, Name, City, Age, CGPA)
+  2  VALUES (1905211, 'Sudam', 'Cuttack', 21, 8.6);
+
+1 row created.
+
+SQL> INSERT INTO students (Roll, Name, City, Age, CGPA)
+  2  VALUES (1905212, 'Vikas', 'Kolkota', 23, 5.98);
+
+1 row created.
+
+SQL> INSERT INTO students (Roll, Name, City, Age, CGPA)
+  2  VALUES (1905165, 'Manish', NULL, 19, 9.15);
+
+1 row created.
+
+SQL> select * from students;
+
+      ROLL NAME                                                                 
+---------- ------------------------------                                       
+CITY                                                      AGE       CGPA        
+-------------------------------------------------- ---------- ----------        
+   1905101 Ram                                                                  
+Bhubaneswar                                                19          9        
+                                                                                
+   1905102 Hari                                                                 
+Bhubaneswar                                                          6.7        
+                                                                                
+   1905103 Uday                                                                 
+Jharkhand                                                  20       8.97        
+                                                                                
+
+      ROLL NAME                                                                 
+---------- ------------------------------                                       
+CITY                                                      AGE       CGPA        
+-------------------------------------------------- ---------- ----------        
+   1905104 Vikas                                                                
+Uttar Pradesh                                              19        8.5        
+                                                                                
+   1905105 Sweta                                                                
+Ranchi                                                     19        9.2        
+                                                                                
+   1905106 Yogesh                                                               
+Rajastan                                                   18        7.9        
+                                                                                
+
+      ROLL NAME                                                                 
+---------- ------------------------------                                       
+CITY                                                      AGE       CGPA        
+-------------------------------------------------- ---------- ----------        
+   1905210 Smriti                                                               
+Delhi                                                      20       8.99        
+                                                                                
+   1905211 Sudam                                                                
+Cuttack                                                    21        8.6        
+                                                                                
+   1905212 Vikas                                                                
+Kolkota                                                    23       5.98        
+                                                                                
+
+      ROLL NAME                                                                 
+---------- ------------------------------                                       
+CITY                                                      AGE       CGPA        
+-------------------------------------------------- ---------- ----------        
+   1905165 Manish                                                               
+                                                           19       9.15        
+                                                                                
+
+10 rows selected.
+
+SQL> spool off;
