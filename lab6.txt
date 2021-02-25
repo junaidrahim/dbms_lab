@@ -1,0 +1,80 @@
+SQL> SELECT SUM(STRENGTH), CATEGORY FROM DEPARTMENT GROUP BY CATEGORY;
+
+SUM(STRENGTH) C                                                                 
+------------- -                                                                 
+           20 W                                                                 
+           43 Y                                                                 
+          130 X                                                                 
+           50 Z                                                                 
+
+SQL> ALTER TABLE employee ADD SALARY number(5) DEFAULT 0;
+
+Table altered.
+
+SQL> select * from employee;
+
+     EMPNO EMPNAME    JOB              MANAGERID     DEPTNO     SALARY          
+---------- ---------- --------------- ---------- ---------- ----------          
+      1234 Ramesh     Salesman              1001         20          0          
+      1349 Harish     Salesman              1001         20          0          
+      1738 Rahul      Operator              1001         20          0          
+      1625 Ramesh     Security              1002         30          0          
+      1273 Rakesh     Operator              1002         30          0          
+      1725 Ravi       Security              1003         25          0          
+      1024 Manish     Salesman              1003         25          0          
+      1579 Kapil      Cleaner               1004          0          0          
+      1699 Raj        Cleaner               1005          0          0          
+
+9 rows selected.
+
+SQL> UPDATE employee SET SALARY = dbms_random.value(5000,12000);
+
+9 rows updated.
+
+SQL> select * from employee;
+
+     EMPNO EMPNAME    JOB              MANAGERID     DEPTNO     SALARY          
+---------- ---------- --------------- ---------- ---------- ----------          
+      1234 Ramesh     Salesman              1001         20      10269          
+      1349 Harish     Salesman              1001         20      11823          
+      1738 Rahul      Operator              1001         20      11607          
+      1625 Ramesh     Security              1002         30      11296          
+      1273 Rakesh     Operator              1002         30       5113          
+      1725 Ravi       Security              1003         25       8110          
+      1024 Manish     Salesman              1003         25       6074          
+      1579 Kapil      Cleaner               1004          0       6208          
+      1699 Raj        Cleaner               1005          0      11024          
+
+9 rows selected.
+
+SQL> SELECT AVG(SALARY), DEPTNO FROM EMPLOYEE GROUP BY DEPTNO;
+
+AVG(SALARY)     DEPTNO                                                          
+----------- ----------                                                          
+     8204.5         30                                                          
+       7092         25                                                          
+      11233         20                                                          
+       8616          0                                                          
+
+SQL> SELECT MAX(SALARY), DEPTNO FROM EMPLOYEE GROUP BY DEPTNO;
+
+MAX(SALARY)     DEPTNO                                                          
+----------- ----------                                                          
+      11296         30                                                          
+       8110         25                                                          
+      11823         20                                                          
+      11024          0                                                          
+
+SQL> SELECT AVG_S, DEPTNO FROM (SELECT AVG(SALARY) AS AVG_S, DEPTNO FROM EMPLOYEE GROUP BY DEPTNO ORDER BY AVG_S DESC) WHERE ROWNUM <=1;
+
+     AVG_S     DEPTNO                                                           
+---------- ----------                                                           
+     11233         20                                                           
+
+SQL> SELECT CATEGORY FROM (SELECT SUM(STRENGTH) AS SUM_S, CATEGORY FROM DEPARTMENT GROUP BY CATEGORY ORDER BY SUM_S DESC) WHERE ROWNUM <= 1;
+
+C                                                                               
+-                                                                               
+X                                                                               
+
+SQL> spool off
